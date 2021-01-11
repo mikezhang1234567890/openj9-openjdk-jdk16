@@ -96,6 +96,7 @@ public class TestSecurityManagerChecks {
         SecurityManager sm = new SecurityManager() {
             @Override
             public void checkPackageAccess(String pkg) {
+                System.out.println("doRunNamedModuleTest - checking package name: " + pkg);
                 if (pkg.startsWith("test.")) {
                     checkPackageAccessCallCount[0]++;
                 }
